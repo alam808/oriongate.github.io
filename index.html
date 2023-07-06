@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>OrionGate</title>
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500&family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&family=Poppins:wght@100;200;300;400&family=Roboto+Condensed:wght@300;400&family=Roboto+Slab:wght@100;300;400&family=Roboto:wght@100;400;500&display=swap');
+
+
+* {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+  
+}
+
+.hero {
+
+  min-height: 100vh;
+  width: 100%;
+  color: black;
+  position: relative;
+
+}
+
+nav {
+  height: 80px;
+  width: 100%;
+  
+
+}
+
+nav .logo {
+  width: 200px;
+  cursor: pointer;
+  padding-left: 20px;
+}
+
+nav ul {
+  float: right;
+  margin-right: 10px;
+
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 70px;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: black;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight:bold;
+  font-style: 'Poppins', sans-serif;
+}
+
+a.active,
+a:hover {
+  background: #53EB95;
+  transition: .5s;
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: #53C5A5;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+  
+}
+
+#check {
+  display: none;
+}
+
+section {
+  display: none;
+ 
+}
+
+.text-container {
+  max-width: 550px;
+  margin-top: 40px;
+  margin-left: 5%;
+}
+
+.text-container h1 {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: 'Merriweather', serif;
+  margin-top: -30px;
+}
+
+span {
+  color: #FFB336;
+
+}
+
+.text-container p {
+  font-size: 27px;
+  margin-top: 40px;
+  max-width: 100%;
+  font-family: 'Merriweather', serif;
+  font-weight: bold;
+}
+
+.orion {
+  font-weight: bold;
+  color:black;
+  
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: -40px;
+}
+
+.gambar {
+  position: relative;
+  width: 400px;
+  right: 10px;
+  
+}
+
+.block {
+  width: 100%;
+}
+
+/*   BAGIAN 2  */
+
+.contain {
+  background-color: black;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/*       ROADMAP       */
+.road {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  color: #fff;
+  font-size: 20px;
+  
+}
+
+.left-column .item {
+  margin-left: 20px;
+
+}
+
+.left-column,
+.right-column {
+  flex-basis: 45%;
+}
+
+.item {
+  margin-bottom: 20px;
+}
+
+.aset,
+.visi-misi,
+.roadmap {
+  display: none;
+}
+
+.left-column {
+  padding: 0;
+  margin: 0;
+}
+
+.roadmap p {
+  color: #DADADA;
+  
+}
+
+
+/* Warna dan Hover pada Tombol */
+.toggle-button {
+  padding: 10px 40px;
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.toggle-button:hover {
+  background-color: #35383d;
+}
+
+/* Warna Tombol yang Aktif */
+.toggle-button.active {
+  background-color: #0F2F60;
+}
+
+/* Container Tombol */
+.button-container {
+  display: flex;
+  justify-content: left;
+
+}
+
+/* Ruang antara Tombol */
+.toggle-button:not(:last-child) {
+  margin-right: 10px;
+
+}
+
+.visi-misi {
+  background-color: black;
+  padding: 20px;
+  
+}
+
+.visi-misi p {
+  margin-left: 10px;
+  color: white;
+  font-size: 20px;
+  font-family: 'Roboto Slab', sans-serif;
+  color: #DADADA;
+
+}
+
+.aset {
+  background-color: black;
+  padding: 15px;
+
+
+}
+
+/*fokus Investasi*/
+.aset p {
+  color: #DADADA;
+  margin-left: 10px;
+  font-size: 20px;
+  font-family:'Roboto Slab', sans-serif;
+}
+
+/*  BAGIAN 3   */
+
+.wrapper-bar {
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  padding: 30px;
+}
+.wrapper-bar h2 {
+  color: #53EB95;
+  margin-left: 100%;
+  padding: 10px;
+}
+
+.bar-container {
+  width: 500px;
+  height: 50px;
+  margin-bottom: 10px;
+  position: relative;
+  margin-left: 10px;
+  color: white;
+}
+
+.bar {
+  height: 100%;
+  background-color: #ccc;
+  position: absolute;
+}
+
+.bar-container:nth-of-type(3) .bar {
+  background-color: #FFBC40;
+}
+
+.bar-container:nth-of-type(4) .bar {
+  background: linear-gradient(to right, #FFBC40, #22CB7D);
+  /* Gradien kuning ke hijau */
+}
+
+.bar:last-child {
+  background-color: #00ff00;
+}
+
+.bar-text {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #041829;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.bar-container h1 {
+  margin-left: 100%;
+  font-size: 40px;
+  padding: 5px;
+}
+
+/*   bagian 4        */
+
+.sesi-akhir {
+  display: flex;
+  padding-left: 30px;
+  background-color: black ;
+
+}
+
+.sesi-akhir h1 {
+  color: white;
+}
+.sesi-akhir li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}
+
+
+.whitepaper,
+.about,
+.social {
+  margin-right: 50px;
+}
+
+
+
+
+/*       BAGIAN 5        */
+footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  color: white;
+  font-size: 14px;
+}
+
+
+
+@media (max-width: 858px) {
+  .bar-text {
+    top: 35%;
+  }
+  
+  .wrapper-bar h1 {
+    text-align: center;
+  }
+  
+  .wrapper-bar h2 {
+  color: #53EB95;
+  margin-left: 100%;
+  font-size: 20px;
+}
+.wrapper-bar p {
+  text-align: center;
+}
+  
+  .checkbtn {
+    display: block;
+    width: 50px;
+    text-align: center;
+  }
+  nav ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+    color: white;
+  }
+
+  a:hover,
+  a.active {
+    background: none;
+    color: #0082e6;
+  }
+
+  #check:checked~ul {
+    left: 0;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text-container {
+    margin-top: 15%;
+    margin-left: 2%;
+    max-width: 90%;
+  }
+
+  .gambar {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-left: 50px;
+    width:330px;
+  }
+  
+
+  .bar-container {
+    width: 70%;
+  }
+
+  .bar-text,
+  .bar-container h1 {
+    font-size: 20px;
+    padding-top: 15px;
+  }
+
+  .wrapper-bar h1 {
+    font-size: 20px;
+  }
+
+  .visi-misi p {
+    padding: 1px;
+    color: white;
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .whitepaper,
+  .about,
+  .social {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+
+
+  footer {
+    position: static;
+
+  }
+
+  .toggle-button {
+    font-size: 15px;
+    padding: 3px;
+    margin: 5px;
+  }
+
+  .button-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+    .bar-text{
+    color:white;
+  }
+  
+.sesi-akhir h1 {
+  color: white;
+}
+
+.sesi-akhir {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: black;
+  }
+
+.sesi-akhir li a {
+  color: white;
+}
+  
+
+}
+     
+   </style>
+   
+</head>
+<body>
+  
+  <div class="hero">
+    
+    <nav>
+       <img src="https://i.ibb.co/Fh6MDHq/oriongate.png" class="logo">
+       
+     <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a class="active" href="#">Beranda</a></li>
+        <li><a href="https://wa.me/+6283829222635/">Feedback</a></li>
+        <li><a href="https://wa.me/+6283829222635/">Contact</a></li>
+        
+      </ul>
+  
+     </nav>
+     <section></section>
+    
+    
+ <!--element 1-->
+ <div class="container">
+    <div class="text-container">
+      <h1>Gerbang Menuju Blockchain &  <span class="auto-type"></span></h1>
+      <p><span class="orion">Oriongate</span> Ventures fokus pada Pengembangan dan Pemanfaatan Teknologi blockchain untuk Meraih investasi yang optimal dengan risiko minimal.</p>
+    </div>
+   
+     <!--Gambar di kanan-->
+    <div class="gambar">
+      <img src="https://i.ibb.co/ckmP8R5/Blockchain-1.png" class="block" />
+    </div>
+    </div>
+    
+     <!--element 3-->
+      <div class="contain">
+     
+        <div class="button-container">
+          <button id="new-button" class="toggle-button" onclick="toggleElement('new')">Visi Misi</button>
+          <button id="aset-button" class="toggle-button" onclick="toggleElement('aset')"> Fokus Investasi</button>
+          <button id="roadmap-button" class="toggle-button" onclick="toggleElement('roadmap')">Roadmap</button>
+        </div>
+     
+        <div id="visi-misi" class="visi-misi">
+          <p>
+            Tujuan kami adalah Mengumpulkan sumber informasi, <br> Strategi investasi dan Pengetahuan untuk membangun bisnis <br> di industri blockchain,
+     
+            Oriongate akan menjadi Venture Capital, <br> <br> Pertama di Indonesia yang mendorong adopsi dan inovasi <br>teknologi blockchain, Kami berkomitmen untuk menjadi sumber <br> daya terkemuka bagi para pelaku bisnis yang tertarik dalam <br> memanfaatkan potensi revolusioner yang ditawarkan oleh teknologi ini.
+          </p>
+        </div>
+     
+        <div id="aset" class="aset">
+          <p>
+            Kami akan Menganalisa aset dan strategi investasi <br>yang memiliki tingkat resiko rendah dengan <br>imbal hasil terbaik di antaranya:<br> <br>
+     
+            1. Bitcoin dan ethereum
+            <br>
+     
+            2. Staking: strategi menggandakan jumlah coin dengan mengunci beberapa coin <br>
+     
+            3. Liquidty Provider: Mengisi pool bursa terdesentralisasi untuk mendapatkan imbal hasil dari biaya jual beli yang dilakukan semua trader <br>
+     
+            4. Lending & Borrowing: Meminjam dan memberi pinjaman untuk mendapatkan bunga <br>
+     
+            4. Startup: Kami juga akan menyuntikan sedikit dana <br>kepada startup di industri ini yang memiliki potensi.
+          </p>
+        </div>
+     
+        <div id="roadmap" class="roadmap">
+          <div class="road">
+            <div class="left-column">
+              <div class="item">
+                <h2>Q1</h2>
+                <p>
+                  - Membuat frontend website <br>
+                  - Mencari pendanaan <br />
+                  - Mendapat izin beroperasi
+                </p>
+              </div>
+     
+              <div class="item">
+                <h2>Q2</h2>
+                <p>
+                  - Analisa we Market <br>
+                  - Mulai eksplorasi <br>
+                  - Membuat content Edukasi
+                </p>
+              </div>
+            </div>
+     
+            <div class="right-column">
+              <div class="item">
+                <h2>Q3</h2>
+                <p>
+                  - Mempelajari smartcontract
+                </p>
+              </div>
+     <br><br>
+              <div class="item">
+                <h2>Q4</h2>
+                <p>
+                  - Presentasi untuk menghitung Profit And Lose (PnL) <br>
+                  - Evaluasi <br>
+                  - Mencari pendanaan tambahan
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+  <p style="
+  font-size: 15px;
+  background-color:black;
+  color:#DBA817;
+  padding-left: 15px;
+  font-weight: bold;
+  
+  ">Full reaf whitepaper.</p>
+  
+   <div class="wrapper-bar">
+    <h1>Ilustrasi Keuntungan <br> Dengan Modal 1 Juta</h1>
+    <p>Pada Tanggal 1 Juli 2020</p>
+    <br>
+    
+    <div class="bar-container">
+      <div class="bar" style="width: 30%;"></div>
+      <span class="bar-text">Deposito +5%</span>
+      <h2>1.050.000</h2>
+    </div>
+    
+    <div class="bar-container">
+      <div class="bar" style="width: 40%;"></div>
+      <span class="bar-text">Emas +27.7%</span>
+      <h2>1.277.000</h2>
+    </div>
+    
+    <div class="bar-container">
+      <div class="bar" style="width: 80%;"></div>
+      <span class="bar-text">Bitcoin 300%</span>
+      <h2>3.000.000</h2>
+    </div>
+    
+    <div class="bar-container">
+      <div class="bar" style="width: 100%;"></div>
+      <span class="bar-text">Bitcoin 300% + 3% Staking</span>
+      <h2>3.091.317</h2>
+    </div>
+  </div>
+  
+  
+  <div class="sesi-akhir">
+    <div class="whitepaper">
+      <h1>Litepaper</h1>
+        <ul>
+          <li><a href="https://drive.google.com/file/d/14DcREVeC1PYVx5UkzhPSBpCP6DtkHAjh/view?usp=drive_link">Bahasa Indonesia</a></li>
+          <li><a href="#">Bahasa Inggris</a></li>
+        </ul>
+        
+        </div>
+        
+        <div class="about">
+      <h1>About</h1>
+        <ul>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Portofolio</a></li>
+          
+          
+        </ul>
+        </div>
+        
+        <div class="social">
+          <h1>Social</h1>
+          <ul>
+            <li><a href="https://twitter.com/Oriongate_">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Github</a></li>
+            <li><a href="#">Youtube</a></li>
+            <li><a href="#">Medium</a></li>
+          </ul>
+      </div>
+      
+  </div>
+   
+   
+<footer>
+    <p>&copy; 2023 contact@oriongate.com</p>
+</footer>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+<script>
+    var typed = new Typed(".auto-type", {
+      strings: ["Web3", "DeFi", "Crypto", "DAO"],
+      typeSpeed: 150,
+      backSpeed: 150,
+      loop: true
+    });
+  
+    var activeButton = 'new-button';
+  
+    function toggleElement(elementId) {
+      var roadmap = document.getElementById('roadmap');
+      var aset = document.getElementById('aset');
+      var visiMisi = document.getElementById('visi-misi');
+      var roadmapButton = document.getElementById('roadmap-button');
+      var asetButton = document.getElementById('aset-button');
+      var newButton = document.getElementById('new-button');
+  
+      if (elementId === 'roadmap') {
+        roadmap.style.display = 'block';
+        aset.style.display = 'none';
+        visiMisi.style.display = 'none';
+        roadmapButton.classList.add('active');
+        asetButton.classList.remove('active');
+        newButton.classList.remove('active');
+        activeButton = 'roadmap-button';
+      } else if (elementId === 'aset') {
+        roadmap.style.display = 'none';
+        aset.style.display = 'block';
+        visiMisi.style.display = 'none';
+        roadmapButton.classList.remove('active');
+        asetButton.classList.add('active');
+        newButton.classList.remove('active');
+        activeButton = 'aset-button';
+      } else if (elementId === 'new') {
+        roadmap.style.display = 'none';
+        aset.style.display = 'none';
+        visiMisi.style.display = 'block';
+        roadmapButton.classList.remove('active');
+        asetButton.classList.remove('active');
+        newButton.classList.add('active');
+        activeButton = 'new-button';
+      }
+    }
+  
+    window.addEventListener('DOMContentLoaded', (event) => {
+      var visiMisiButton = document.getElementById(activeButton);
+      visiMisiButton.click();
+    });
+ 
+</script>
+</body>
+</html>
